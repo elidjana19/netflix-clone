@@ -1,0 +1,12 @@
+<div class="login-container">
+    <form [formGroup]="form" (ngSubmit)="displayData()">
+        <input type="text" placeholder="email" FormControlName="email">
+        <input type="password" FormControlName="password">
+
+        <button type="submit">get data</button>
+
+    {{form.value.email}}
+    {{form.value.password}}
+    </form>
+
+</div>

@@ -1,0 +1,6 @@
+json-server
+Fillimisht installoj json-serve me komanden "npm install -g json-server"
+Me pas krijoj filen db.json
+dhe me komanden "json-server --watch db.json --port 3000" per te hapur localhost 3000
+ku une shoh te dhenat qe kam ne filen db.json
+
