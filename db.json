@@ -1,6 +1,25 @@
 {
-    "users": [
-    { "id": 1, "username": "user1", "password": "password1" },
-    { "id": 2, "username": "user2", "password": "password2" }
+  "users": [
+    {
+      "id": "68d7",
+      "name": "ana",
+      "email": "ana@gmail.com",
+      "password": "ana",
+      "number": "12345"
+    },
+    {
+      "id": "0785",
+      "name": "",
+      "email": "",
+      "password": "",
+      "number": ""
+    },
+    {
+      "id": "79f9",
+      "name": "mira",
+      "email": "mira@gmail.com",
+      "password": "mira",
+      "number": "88654337"
+    }
   ]
 }

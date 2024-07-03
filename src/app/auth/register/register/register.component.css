@@ -1,0 +1,124 @@
+.background-image {
+  /* background-image: url(""); */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100vw;
+}
+
+.register {
+  background-color: rgba(219, 5, 5, 0.7);
+  width: 50%;
+  margin: auto;
+  padding: 48px 68px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 10px 10px rgb(200, 198, 198);
+}
+header {
+  display: block;
+  color: white;
+}
+
+.register input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer,
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .register {
+    width: 40%;
+    padding: 40px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register {
+    width: 60%;
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .register {
+    width: 70%;
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .register {
+    width: 80%;
+    padding: 15px 20px;
+  }
+
+  .register input,
+  button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .register {
+    width: 80%;
+    padding: 10px 15px;
+  }
+
+  .register input,
+  button {
+    font-size: 12px;
+  }
+
+  header {
+    font-size: 16px;
+  }
+
+  footer a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .register {
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .register input,
+  button {
+    font-size: 10px;
+  }
+
+  header {
+    font-size: 14px;
+  }
+
+  footer a {
+    font-size: 12px;
+  }
+}

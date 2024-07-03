@@ -1,0 +1,33 @@
+<app-header></app-header>
+<app-big-ad></app-big-ad>
+
+<div class="movies">
+  <div class="container">
+    <div class="row" id="top-rated">
+      <h3>Top Rated Movies</h3>
+      <div class="movies-list">
+        <div class="card" *ngFor="let movie of topRatedMovies">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4" id="popular">
+      <h3>Popular Movies</h3>
+      <div class="movies-list">
+        <div class="card" *ngFor="let movie of popularMovies">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4" id="upcoming">
+      <h3>Upcoming Movies</h3>
+      <div class="movies-list">
+        <div class="card" *ngFor="let movie of upcomingMovies">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.netflix-header {
+    display: flex;
+
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111111;
+    color: #fff;
+  }
+  
+  .netflix-header img {
+    width: 110px;
+    height: auto;
+  }
+  
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1
+
+  }
+  
+  .categories {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .categories li {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .logout-btn  {
+    margin-left: auto;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+   
+  }
+  
+  .logout-btn:hover {
+    background-color: rgb(146, 146, 146);
+    transform: scale(0.97);
+    transition: all 0.2s ease-in-out;
+  }
+  

@@ -1,0 +1,58 @@
+
+.movies {
+    background-color: #181818;
+  }
+  .container {
+    max-width: 1400px;
+    margin-top:520px
+  }
+  
+  h3 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .movies-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .card img {
+    width: 180px;
+    height: 300px;
+    border-radius: 1px;
+    transition: transform 0.3s;
+    object-fit: cover; 
+  object-position: center;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .card img {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card img {
+      width: 100px;
+    }
+  }
+  

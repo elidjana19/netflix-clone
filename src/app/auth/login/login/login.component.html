@@ -1,12 +1,23 @@
-<div class="login-container">
-    <form [formGroup]="form" (ngSubmit)="displayData()">
-        <input type="text" placeholder="email" FormControlName="email">
-        <input type="password" FormControlName="password">
-
-        <button type="submit">get data</button>
-
-    {{form.value.email}}
-    {{form.value.password}}
-    </form>
-
+<div class="background-image">
+  <div class="login-container">
+    <div class="login">
+      <header><h1>Sign In</h1></header>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+          <input type="text" formControlName="email" placeholder="Email" />
+        </div>
+        <div>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+        </div>
+        <button class="btn btn-danger" [disabled]="!loginForm.valid" type="submit">Login</button>
+      </form>
+      <footer>
+        <p>New to Netflix? <a routerLink="/register">Sign up now</a></p>
+      </footer>
+    </div>
+  </div>
 </div>
