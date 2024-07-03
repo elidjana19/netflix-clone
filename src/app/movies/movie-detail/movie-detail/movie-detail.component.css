@@ -1,3 +1,102 @@
+*{
+    background-color: #010101;
+    color:white
+   
+}
+header{
+    height:60px
+
+}
+header button{
+    position: absolute;
+    top:10px
+}
+
+.movie-detail-container {
+    position: relative;
+    background-size: cover; 
+    height: 80vh; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .movie-detail-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+div, header{
+    padding:20px
+}
+
 img{
     width:40px
 }
+
+.movie-details{
+    display:flex;
+    gap:20px;
+    height:500px;
+    
+}
+.movie-details img{
+    width:auto;
+    height:auto
+
+}
+
+strong{color:red}
+
+
+/* cast */
+.cast {
+    padding: 20px;
+  }
+  
+  .actor-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 20px; 
+  }
+  
+  .actor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .actor-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .actor-image:hover{
+    transform: scale(1.03);
+    translate:all 0.2s ease
+  }
+
+  .actor-details {
+    padding: 10px;
+  }
+  
+  .actor-details h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .actor-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+  

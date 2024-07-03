@@ -46,12 +46,32 @@ export class MoviesServiceService {
   }
 
   
+// genres
+
+  getActionMovies (): Observable<Movies> {
+    return this.http.get<Movies>(`${this.url}/discover/movie?api_key=${this.apikey}&with_genres=28`);
+  }
+
+  getAdventureMovies (): Observable<Movies> {
+    return this.http.get<Movies>(`${this.url}/discover/movie?api_key=${this.apikey}&with_genres=12`);
+  }
+
+  getAnimationMovies (): Observable<Movies> {
+    return this.http.get<Movies>(`${this.url}/discover/movie?api_key=${this.apikey}&with_genres=16`);
+  }
+
+  getComedyMovies (): Observable<Movies> {
+    return this.http.get<Movies>(`${this.url}/discover/movie?api_key=${this.apikey}&with_genres=35`);
+  }
+
 
   // Details
-  getMovieDetails(id:number):Observable<any[]>{
-    return this.http.get<any[]>(`${this.url}.movie/${id}?api_key=${this.apikey}`)
-
+  
+  getMovieDetails(id: string): Observable<any> {
+    const url = `${this.url}/movie/${id}?api_key=${this.apikey}`;
+    return this.http.get<any>(url);
   }
+
   getMovieVideo (id: any): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}/movie/${id}/videos?api_key=${this.apikey}`)
   }
@@ -59,4 +79,9 @@ export class MoviesServiceService {
   getMovieCast (id: any): Observable<any> {
     return this.http.get<any>(`${this.url}/movie/${id}/credits?api_key=${this.apikey}`)
   }
+
+  getReviews(id:any):Observable<any>{
+    return this.http.get<any>(`${this.url}/movie/${id}/reviews?api_key=${this.apikey}`)
+  }
+
 }

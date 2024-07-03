@@ -3,19 +3,24 @@ import { MoviesServiceService } from '../../../services/movies-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../../header/header.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-movie-detail',
   standalone:true,
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.css'],
-  imports:[CommonModule]
+  imports:[CommonModule, HeaderComponent, RouterLink]
 })
 export class MovieDetailComponent implements OnInit {
 
-  movie?:any
+  
   castPeople?:any
   video?:any
+  details?:any
+
+  movie: any;
 
   paramId:any
   constructor(private service: MoviesServiceService, private route: ActivatedRoute,
@@ -25,12 +30,13 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
      this.paramId = this.route.snapshot.paramMap.get('id');
    
-
-
     this.cast(this.paramId)
+   // this.getReviews(this.paramId)
+
+    this.movieDetails(this.paramId)
+    
 
   }
-
 
 
 
@@ -40,6 +46,28 @@ export class MovieDetailComponent implements OnInit {
       console.log(this.castPeople)
     })
   }
+
+
+  getReviews(id:any){
+    this.service.getReviews(id).subscribe((res)=>{
+      console.log(res.results)
+    })
+  }
+
+
+  movieDetails(id: string): void {
+    this.service.getMovieDetails(id).subscribe(
+      (res: any) => {
+        this.movie = res;
+        console.log(this.movie)
+      },
+      (error: any) => {
+        console.error('Error fetching movie details:', error);
+      }
+    );
+  }
+
+
 
  
 

@@ -4,13 +4,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, ReactiveFormsModule, HttpClientModule],
+  imports: [RouterLink, RouterOutlet, ReactiveFormsModule, HttpClientModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

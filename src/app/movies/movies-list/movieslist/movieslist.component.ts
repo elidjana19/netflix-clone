@@ -18,6 +18,8 @@ export class MovieslistComponent {
   upcomingMovies:any
   nowPlayingMovies:any
   topRatedMovies:any
+  actionMovies:any
+  adventureMovies:any
 
 
   constructor(private service:MoviesServiceService){
@@ -29,6 +31,8 @@ export class MovieslistComponent {
     this.upcoming()
     this.nowPlaying()
     this.topRated()
+    this.action()
+    this.adventure()
    
   }
 
@@ -61,6 +65,20 @@ export class MovieslistComponent {
       console.log(this.topRatedMovies)
     })
 
+  }
+
+  action(){
+    this.service.getActionMovies().subscribe((res)=>{
+      this.actionMovies=res.results
+     console.log(this.actionMovies)
+    })
+
+  }
+
+  adventure(){
+    this.service.getAdventureMovies().subscribe((res)=>{
+      this.adventureMovies=res.results
+    })
   }
 
 }

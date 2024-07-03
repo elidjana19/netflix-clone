@@ -29,5 +29,21 @@
         </div>
       </div>
     </div>
+    <div class="row mt-4" id="upcoming">
+        <h3>Action Movies</h3>
+        <div class="movies-list">
+          <div class="card" *ngFor="let movie of actionMovies">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4" id="upcoming">
+        <h3>Adventure Movies</h3>
+        <div class="movies-list">
+          <div class="card" *ngFor="let movie of adventureMovies">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+          </div>
+        </div>
+      </div>
   </div>
 </div>
