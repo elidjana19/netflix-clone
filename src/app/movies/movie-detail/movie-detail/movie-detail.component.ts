@@ -5,13 +5,14 @@ import { Meta, Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../../header/header.component';
 import { RouterLink } from '@angular/router';
+import { ShareComponent } from '../../../share/share.component';
 
 @Component({
   selector: 'app-movie-detail',
   standalone:true,
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.css'],
-  imports:[CommonModule, HeaderComponent, RouterLink]
+  imports:[CommonModule, HeaderComponent, RouterLink, ShareComponent]
 })
 export class MovieDetailComponent implements OnInit {
 
@@ -22,13 +23,19 @@ export class MovieDetailComponent implements OnInit {
 
   movie: any;
 
+  movieLink!:string
+  showShare: boolean = false;
+
   paramId:any
+
   constructor(private service: MoviesServiceService, private route: ActivatedRoute,
     private meta:Meta, private title:Title
   ) {}
 
   ngOnInit() {
      this.paramId = this.route.snapshot.paramMap.get('id');
+
+     this.movieLink = `${window.location.origin}/movie/${this.paramId}`;
    
     this.cast(this.paramId)
    // this.getReviews(this.paramId)
@@ -68,6 +75,10 @@ export class MovieDetailComponent implements OnInit {
   }
 
 
+  shareMovie() {
+    this.movieLink = `${window.location.origin}/movie/${this.paramId}`;
+    this.showShare = true;
+  }
 
  
 

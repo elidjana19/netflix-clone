@@ -24,6 +24,10 @@
 </div>
   </div>
 
+  <button (click)="shareMovie()">Share</button>
+<app-share *ngIf="showShare" [movieLink]="movieLink"></app-share>
+
+
   <div class="cast">
     <h2>Acting Cast</h2>
     <div class="actor-grid">

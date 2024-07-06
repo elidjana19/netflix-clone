@@ -1,7 +1,7 @@
 json-server
 Fillimisht installoj json-serve me komanden "npm install -g json-server"
 Me pas krijoj filen db.json. Ne kete file do te shtohen userat qe regjistrohen.
-dhe me komanden "json-serve --watch db.json --port 3000" per te hapur localhost 3000
+dhe me komanden "json-server --watch db.json --port 3000" per te hapur localhost 3000
 ku une shoh te dhenat/userat qe kam ne filen db.json
 Register
 Fillimisht kam realizuar regjitsrimin. Me nje forme qe mban te dhena si emri, email, password number. Kam perdorur ReactiveForms
