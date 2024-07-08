@@ -1,1 +1,33 @@
-<p>register-modal works!</p>
+<div class="background-overlay"></div>
+      <div class="register">
+        <header><h1>Sign Up</h1></header>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div>
+            <input formControlName="name" type="text" placeholder="Name" />
+          </div>
+          <div>
+            <input formControlName="email" type="text" placeholder="Email" />
+          </div>
+          <div>
+            <input
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <div>
+            <input
+              formControlName="number"
+              type="text"
+              placeholder="Phone Number"
+            />
+          </div>
+          <button class="btn btn-light" [disabled]="!registerForm.valid" type="submit">Register</button>
+        </form>
+        <footer>
+          <p>Already registered? <a (click)="openLoginModal()">Login</a></p>
+        </footer>
+      </div>
+
+  
+  

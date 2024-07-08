@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { MovieslistComponent } from '../movies/movies-list/movieslist/movieslist.component';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,13 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
 
-  constructor(private router:Router){
+  constructor(private router:Router, private authService:AuthService){
 
   }
 
   logout(){
-    localStorage.removeItem('token')
-    this.router.navigate([''])
+    this.authService.login();
+    this.router.navigate(['/home'])
 
   }
 

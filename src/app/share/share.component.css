@@ -1,3 +1,13 @@
-*{
-    background-color: black;
-}
+.share-container {
+    position: relative;
+  }
+  
+  .qr-wrapper {
+    position: absolute;
+    bottom: 0px; 
+    right: 0px; 
+  }
+
+
+  
+  

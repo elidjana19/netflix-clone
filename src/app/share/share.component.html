@@ -1,4 +1,14 @@
-<div *ngIf="qrCodeImage">
-    <img [src]="qrCodeImage" alt="QR Code">
+<div class="share-container">
+  <div class="qr-wrapper">
+    <qrcode [qrdata]="qrData" [width]="30"></qrcode> 
   </div>
-  
+</div>
+
+
+<!-- <div class="share-container">
+  <div class="qr-wrapper">
+    <a [routerLink]="['/movies', movieId]">
+      <qrcode [qrdata]="qrData" [width]="30"></qrcode>
+    </a>
+  </div>
+</div> -->

@@ -6,6 +6,27 @@
       "email": "ana@gmail.com",
       "password": "ana",
       "number": "12345"
+    },
+    {
+      "id": "f90b",
+      "name": "mira",
+      "email": "mira@gmail.com",
+      "password": "mira",
+      "number": "78854445666"
+    },
+    {
+      "id": "9a99",
+      "name": "beni",
+      "email": "beni@gmail.com",
+      "password": "beni",
+      "number": "123455"
+    },
+    {
+      "id": "4528",
+      "name": "sara",
+      "email": "sara@gmail.com",
+      "password": "sara",
+      "number": "12345678"
     }
   ]
 }

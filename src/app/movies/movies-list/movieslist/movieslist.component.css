@@ -1,6 +1,6 @@
-
 .movies {
     background-color:#010101;
+  
   }
   .container {
     max-width: 1400px;
@@ -43,6 +43,11 @@
     transform: scale(1.05);
   }
   
+
+  .qrcode{
+    background-color: white;
+    z-index: 500;
+  }
   
   @media (max-width: 768px) {
     .card img {

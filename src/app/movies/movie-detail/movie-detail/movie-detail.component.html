@@ -1,49 +1,18 @@
-<header>
-    <button class="btn btn-light" routerLink="/movies">Back to Movies</button>
-</header>
-<!-- <div *ngIf="movie" class="movie-detail-container" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'}">
-    <div class="movie-detail-overlay">
-      <h1>{{ movie.original_title }}</h1>
-      <p style="font-style: italic;"><strong>{{ movie.tagline }}</strong></p>
-      <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
-      <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
-    </div>
-  </div> -->
-
- 
-  <div *ngIf="movie" class="movie-details">
-    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.original_title }}">
-    <div class="details">
-    <h1>{{ movie.original_title }}</h1>
-    <p style="font-style: italic;"><strong>{{ movie.tagline }}</strong></p>
-    <p><strong>Overview:</strong> {{ movie.overview }}</p>
-    <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
-    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
-    <p><strong>Revenue:</strong> {{movie.revenue | currency}}</p>
-    <p><strong>Language:</strong> {{movie.original_language}}</p>
-</div>
-  </div>
-
-  <button (click)="shareMovie()">Share</button>
-<app-share *ngIf="showShare" [movieLink]="movieLink"></app-share>
-
-
-  <div class="cast">
-    <h2>Acting Cast</h2>
-    <div class="actor-grid">
-        <div class="actor-item" *ngFor="let actor of castPeople">
-            <img class="actor-image" [src]="'https://image.tmdb.org/t/p/w500' + actor.profile_path" alt="{{ actor.original_name }}">
-            <div class="actor-details">
-                <h3>{{ actor.original_name }}</h3>
-                <p>{{ actor.character }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+<div class="container" >
+<div *ngIf="movieDetails" class="movie-details" >
   
-  <div *ngIf="!movie">
-    <p>Loading...</p>
-  </div>
-  
+  <img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="{{ movieDetails.original_title }}">
+  <div class="details">
+    <!-- <button class="btn btn-danger" (click)="closeDetailModal()">Close</button> -->
+  <h1>{{ movieDetails.original_title }}</h1>
+  <p style="font-style: italic;"><strong>{{ movieDetails.tagline }}</strong></p>
+  <!-- <p><strong>Overview:</strong> {{ movieDetails.overview }}</p> -->
+  <p><strong>Release Date:</strong> {{ movieDetails.release_date }}</p>
+  <p><strong>Rating:</strong> {{ movieDetails.vote_average }}</p>
+  <p><strong>Language:</strong> {{movieDetails.original_language}}</p>
+</div>
+</div>
+<div *ngIf="!movieDetails">
+  <p>Loading...</p>
+</div>
+</div>

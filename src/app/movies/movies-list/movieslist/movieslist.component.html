@@ -1,49 +1,56 @@
 <app-header></app-header>
 <app-big-ad></app-big-ad>
 
+<app-share></app-share>
+
 <div class="movies">
   <div class="container">
     <div class="row" id="top-rated"  >
       <h3>Top Rated Movies</h3>
       <div class="movies-list">
-        <div class="card" *ngFor="let movie of topRatedMovies">
-          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        <div class="card" *ngFor="let movie of topRatedMovies" (mouseover)="openMovieDetail($event, movie, 'top')" (mouseleave)="close()" (click)="navigateToMovieDetails(movie)">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img"  />
+          <app-share [movieId]="movie.id"></app-share>
         </div>
       </div>
     </div>
 
-    <div class="row mt-4" id="popular" >
+     <div class="row mt-4" id="popular" >
       <h3>Popular Movies</h3>
       <div class="movies-list">
-        <div class="card" *ngFor="let movie of popularMovies">
-          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        <div class="card" *ngFor="let movie of popularMovies"(mouseover)="openMovieDetail($event, movie, 'popular')" (mouseleave)="close()" (click)="navigateToMovieDetails(movie)">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img"  />
+          <app-share [movieId]="movie.id"></app-share>
         </div>
       </div>
     </div>
 
-    <div class="row mt-4" id="upcoming">
+    <!-- <div class="row mt-4" id="upcoming"> 
       <h3>Upcoming Movies</h3>
       <div class="movies-list">
-        <div class="card" *ngFor="let movie of upcomingMovies">
-          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+        <div class="card" *ngFor="let movie of upcomingMovies" (click)="openMovieDetail($event,movie, 'Upcoming Movies')" >
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img" />
+          <app-share [movieId]="movie.id"></app-share>
         </div>
       </div>
     </div>
     <div class="row mt-4" id="upcoming">
         <h3>Action Movies</h3>
         <div class="movies-list">
-          <div class="card" *ngFor="let movie of actionMovies">
-            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+          <div class="card" *ngFor="let movie of actionMovies" (click)="openMovieDetail($event,movie, 'Action Movies')" >
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img"  />
+            <app-share [movieId]="movie.id"></app-share>
           </div>
         </div>
       </div>
       <div class="row mt-4" id="upcoming">
         <h3>Adventure Movies</h3>
         <div class="movies-list">
-          <div class="card" *ngFor="let movie of adventureMovies">
-            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" [routerLink]="['/movies', movie.id]" />
+          <div class="card" *ngFor="let movie of adventureMovies" (click)="openMovieDetail($event, movie, 'Adventure Movies')">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img" />
+            <app-share [movieId]="movie.id"></app-share>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> -->
   </div>
 </div>

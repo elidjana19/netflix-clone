@@ -67,7 +67,7 @@ export class MoviesServiceService {
 
   // Details
   
-  getMovieDetails(id: string): Observable<any> {
+  getMovieDetails(id: any): Observable<any> {
     const url = `${this.url}/movie/${id}?api_key=${this.apikey}`;
     return this.http.get<any>(url);
   }

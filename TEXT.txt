@@ -1,22 +1,24 @@
 json-server
-Fillimisht installoj json-serve me komanden "npm install -g json-server"
+Fillimisht installoj json-server me komanden "npm install -g json-server"
 Me pas krijoj filen db.json. Ne kete file do te shtohen userat qe regjistrohen.
 dhe me komanden "json-server --watch db.json --port 3000" per te hapur localhost 3000
 ku une shoh te dhenat/userat qe kam ne filen db.json
 Register
-Fillimisht kam realizuar regjitsrimin. Me nje forme qe mban te dhena si emri, email, password number. Kam perdorur ReactiveForms
-registerForm eshte forma e regjistrimit qe kam krijuar, dhe me new FormFroup une e krijoj ate 
-ku ka si FormControl name, email, password dhe number. 
+Fillimisht kam realizuar regjistrimin. Me nje forme qe mban te dhena si emri, email, password number. Kam perdorur ReactiveForms
+registerForm eshte forma e regjistrimit qe kam krijuar, dhe me new FormGroup une e krijoj ate 
+ku ka si FormControl: name, email, password dhe number. 
 Me property binding ne html [formGroup]="registerForm" dhe per cdo input vendos
 formControlName.
-Kam krijuar metoden register e cila realizon post tek db.json vlerat qe merr nga forma
+Kam krijuar metoden register e cila realizon metoden post tek db.json vlerat qe merr nga forma
 bej susbcribe dhe nese ne klikim te butonit regjistro useri eshte shtuar ne db.json afishoj mesazh suksesi.
-Bej reset formen dhe navigoj tek /login, qe useri i sapo regjistruar te mund te logohet.
+Bej reset formen dhe hap LoginModal,ne menyre qe useri i sapo regjistruar te mund te logohet.
 Login
 Perseri e ketu kam perdorur ReactiveForm por vetem 2 inpute si email dhe password. 
 Kam krijuar metoden login qe ben get nga db.json userin me email dhe password sa vlerat e vendosura tek loginForm.
 Nese useri gjendet navigoj tek /movies.
 Per tu kujdesur qe tek /movies te shkojne vetem userat e loguar une kam krijuar nje guard, qe nuk lejon te shkojme tek /movies nepermjet urls.
-Tek metoda login kam shtuar localStorage.setToken, si menyre per te menaxhuar autentikimin e nje useri.
-dhe tek guard.ts kontrolloj nese kjo token ekziston e lejoj kalimin per tek movies nese jo une e kthej userin tek login perseri.
-Dhe kur bej logout me duhet qe kete token ta bej remove nga LocalStorage, per te treguar se useri nuk eshte me i autentikuar ne faqe.
+Kam krijuar service 'auth' ku kam krijuar 3 metoda, login() i jep vlere true variablit qe une shoh nese useri eshte i loguar ose jo, logout() qe i jep vlere false
+dhe isUserLoggedIn() kontrollon nese ky variable ka vlere true. Tek guard.ts shoh vleren e variablit nese eshte true do te thote qe useri eshte loguar
+dhe kthej true duke e lejuar te shkoje tek /movies, perndryshe e rikthej tek /home.
+Kam krijuar edhe service per movies ku kam implementuar metodat per te bere fetch te dhenat nga tmdb. Dhe tek movie-list component 
+une i afishoj keto movies. 

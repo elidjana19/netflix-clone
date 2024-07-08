@@ -1,4 +1,4 @@
-<div class="background-image"  [ngStyle]="{'background-image': 'url(https://images.frandroid.com/wp-content/uploads/2022/10/netflix-octobre-contenus-2022.jpg)'}" >
+<div class="background-overlay"></div>
     <div class="login-container">
       <div class="login">
         <header><h1>Sign In</h1></header>
@@ -16,9 +16,9 @@
           <button class="btn btn-danger" [disabled]="!loginForm.valid" type="submit">Login</button>
         </form>
         <footer>
-          <p>New to Netflix? <a routerLink="/register">Sign up now</a></p>
+          <p>New to Netflix? <a  (click)="openRegisterModal()">Sign up now</a></p>
         </footer>
       </div>
     </div>
-  </div>
+
   
