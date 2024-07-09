@@ -10,6 +10,7 @@ import { MovieDetailComponent } from '../../movie-detail/movie-detail/movie-deta
 import { QrcodeService } from '../../../services/qrcode.service';
 
 
+
 @Component({
   selector: 'app-movieslist',
   standalone: true,
@@ -27,6 +28,8 @@ export class MovieslistComponent {
   adventureMovies:any
   dialogRef!: MatDialogRef<MovieDetailComponent>;
   hoverTimeout: any;
+
+  movieDetails:any
 
   constructor(private service:MoviesServiceService, public dialog:MatDialog, private router:Router){
     
@@ -92,9 +95,10 @@ export class MovieslistComponent {
   // for details modal
 
 
-  openMovieDetail(event: MouseEvent, movie:any, category:string): void {
+   openMovieDetail(event: MouseEvent, movie:any, category:string): void {
 
     event.preventDefault()
+    event.stopPropagation();
    
     const target= event.currentTarget as HTMLElement
     
@@ -135,6 +139,7 @@ export class MovieslistComponent {
   }
 
 
+
   close(){
     this.dialogRef.close()
   }
@@ -146,6 +151,8 @@ export class MovieslistComponent {
     console.log("clicked", movie.id)
     this.close()
   }
+
+
 
 
 }

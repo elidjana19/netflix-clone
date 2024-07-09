@@ -24,9 +24,7 @@ export class MovieDetailComponent implements OnInit {
   movieCast!: any[];
   movieReviews!: any[];
   position:any
-
-  x:any;
-  y:any
+  
   paramId:any
 
 

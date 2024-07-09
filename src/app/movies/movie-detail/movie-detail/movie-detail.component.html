@@ -1,12 +1,9 @@
 <div class="container" >
 <div *ngIf="movieDetails" class="movie-details" >
-  
   <img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="{{ movieDetails.original_title }}">
   <div class="details">
-    <!-- <button class="btn btn-danger" (click)="closeDetailModal()">Close</button> -->
   <h1>{{ movieDetails.original_title }}</h1>
   <p style="font-style: italic;"><strong>{{ movieDetails.tagline }}</strong></p>
-  <!-- <p><strong>Overview:</strong> {{ movieDetails.overview }}</p> -->
   <p><strong>Release Date:</strong> {{ movieDetails.release_date }}</p>
   <p><strong>Rating:</strong> {{ movieDetails.vote_average }}</p>
   <p><strong>Language:</strong> {{movieDetails.original_language}}</p>
