@@ -90,123 +90,14 @@ export class MovieslistComponent {
 
 
   // for details modal
-  // onMouseEnter(event: MouseEvent, movieId: number) {
-  //   event.preventDefault();
-  //   this.hoverTimeout = setTimeout(() => {
-  //     this.openMovieDetails( movieId);
-  //   }, 1000);
-  // }
-
-
-  // onMouseEnter(event: MouseEvent, movieId: number) {
-  //   console.log('Event:', event);
-  //   console.log('Current Target:', event.currentTarget);
-  //   console.log('Movie ID:', movieId);
-    
-  // }
-
-
-
-  // openMovieDetails(movieId: number) {
-  //   this.service.getMovieDetails(movieId.toString()).subscribe(
-  //     (details) => {
-  //       this.dialogRef = this.dialog.open(MovieDetailComponent, {
-  //         data: {
-  //           movieId: movieId,
-  //           details:details
-  //         }, 
-  //       });
-  //     });
-  // }
-
-
-
- 
-
-  // onMouseEnter(event: MouseEvent, movieId: number) {
-  //   const target = event.currentTarget as HTMLElement;
-  //   if (!target) {
-  //     console.error('Current target is null or undefined.');
-  //     return;
-  //   }
-  
-  //   const rect = target.getBoundingClientRect();
-  //   console.log('Bounding Rect:', rect);
-  //   this.openMovieDetails(target, movieId, rect);
-  // }
-
-
-  // onMouseLeave() {
-  //   clearTimeout(this.hoverTimeout);
-  //   if (this.dialogRef) {
-  //     this.dialogRef.close();
-  //   }
- 
-  // }
-
-  
-  // openMovieDetails(target: HTMLElement, movieId: number, position: DOMRect) {
-  //   this.service.getMovieDetails(movieId.toString()).subscribe((details) => {
-  //     this.dialogRef = this.dialog.open(MovieDetailComponent, {
-  //       data: {
-  //         movieId: movieId,
-  //         details: details,
-  //         position: { top: '0px', left: '0px' }
-  //       },
-       
-  //     });
-      
-  //   }
-  //   )
-  // }
-
-
-
-
-
-  // openMovieDetail(event: MouseEvent, movie: any): void {
-  //   const target= event.currentTarget as HTMLElement
-  //   console.log(target)
- 
-    
-  //   // Position relative to the parent container of targetElement
-  //   const offsetX = target.offsetLeft;
-  //   const offsetY = target.offsetTop;
-
-
-  //   console.log('Offset X:', offsetX);
-  //   console.log('Offset Y:', offsetY);
-
-
-
-  //   const height=target.offsetHeight
-  //   console.log(height)
-
-  //   console.log(height+offsetY)
-
-  //   event.preventDefault()
-  //   event.stopPropagation()
-  //   this.service.getMovieDetails(movie.id).subscribe((details)=>{
-  //     console.log(details)  //all movie details
-
-  //     this.dialog.open(MovieDetailComponent,{
-  //       data: {
-  //                 movieId: movie.Id,
-  //                 details: details,
-  //       },
-  //       position:{left:offsetX, top:offsetY+height}
-        
-  //     })
-  //   })
-  // }
-
 
 
   openMovieDetail(event: MouseEvent, movie:any, category:string): void {
+
+    event.preventDefault()
    
     const target= event.currentTarget as HTMLElement
     
-    const scrollYOffset = window.scrollY || window.pageYOffset;
     const movieCardRect = target.getBoundingClientRect()
 
   console.log(movieCardRect.left)
@@ -224,6 +115,9 @@ export class MovieslistComponent {
     }
 
     this.service.getMovieDetails(movie.id).subscribe((details) => {
+      if(this.dialogRef){
+        this.dialogRef.close()  //close any dialog before i open other
+      }
      this.dialogRef= this.dialog.open(MovieDetailComponent, {
         data: {
           movieId: movie.id,

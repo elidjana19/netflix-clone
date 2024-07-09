@@ -37,8 +37,8 @@
   header{
     display:block;
   color:white;
-  
-  
+  margin-bottom:20px
+
   }
   
   .login input, button{
@@ -48,7 +48,8 @@
   
   footer{
     position:absolute;
-    top:50%;
+    top:60%;
+    left:20%
   }
 
   footer, footer a{
