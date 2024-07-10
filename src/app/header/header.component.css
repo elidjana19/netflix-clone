@@ -54,3 +54,11 @@
     transition: all 0.2s ease-in-out;
   }
   
+  @media (max-width:600px){
+    .logout-btn{
+      font-size: 10px;
+    }
+    .netflix-header  img{
+      width:50px
+  }
+  }

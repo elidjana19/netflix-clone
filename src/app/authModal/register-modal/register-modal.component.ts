@@ -10,10 +10,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register-modal',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, ReactiveFormsModule, HttpClientModule, CommonModule, MatDialogModule],
+  imports: [RouterLink, RouterOutlet, ReactiveFormsModule, HttpClientModule, CommonModule, MatDialogModule, ToastrModule],
   templateUrl: './register-modal.component.html',
   styleUrl: './register-modal.component.css'
 })
@@ -22,7 +24,8 @@ export class RegisterModalComponent {
   registerForm!:FormGroup
 
   constructor(private http:HttpClient,
-           private router:Router, public dialogRef:MatDialogRef<RegisterModalComponent>, public dialog:MatDialog
+           private router:Router, public dialogRef:MatDialogRef<RegisterModalComponent>, public dialog:MatDialog,
+           private toastr:ToastrService
   ){}
 
   ngOnInit():void{
@@ -38,12 +41,12 @@ export class RegisterModalComponent {
   register(){
     this.http.post<any>('http://localhost:3000/users',this.registerForm.value)
     .subscribe(res=>{
-      alert("register success")
+      this.toastr.success("Registration is done successfully")
       this.registerForm.reset()
       this.dialogRef.close();
       this.openLoginModal()
     }, error=>{
-      alert("not registered")
+      this.toastr.error("Registration not done !")
     })
 
   }

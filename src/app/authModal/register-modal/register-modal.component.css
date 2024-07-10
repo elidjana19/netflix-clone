@@ -61,4 +61,8 @@
     cursor: pointer;
   }
   
- 
+ @media (max-width:600px){
+  .register{
+    padding:10px
+  }
+ }

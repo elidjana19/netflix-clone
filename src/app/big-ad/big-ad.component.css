@@ -30,32 +30,19 @@ button {
 
 
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
+    .container{
+        display:flex;
+        flex-direction: column;
+    }
+
     .h-screen {
-        width: 50%;
-    }
-
-    button {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 300px) {
-    iframe {
         width: 100%;
+        
     }
-
-    .h-screen {
-        width: 60%;
+    button{
+        font-size: 10px;
     }
+    
 }
 
-@media (max-width: 200px) {
-    iframe {
-        width: 100%;
-    }
-
-    .h-screen {
-        width: 60%;
-    }
-}

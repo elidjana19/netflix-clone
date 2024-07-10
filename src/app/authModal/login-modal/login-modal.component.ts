@@ -8,10 +8,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login-modal',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule,  HttpClientModule, MatDialogModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule,  HttpClientModule, MatDialogModule, ToastrModule],
   templateUrl: './login-modal.component.html',
   styleUrl: './login-modal.component.css'
 })
@@ -22,7 +24,7 @@ export class LoginModalComponent {
 
 
 constructor(private http:HttpClient, private router:Router, public dialogRef:MatDialogRef<LoginModalComponent>,
-public dialog:MatDialog, private authService:AuthService
+public dialog:MatDialog, private authService:AuthService, private toastr:ToastrService
 ){
 }
 
@@ -41,13 +43,13 @@ login() {
       });
 
       if (user) {
-        alert("Login successful.");
+        this.toastr.success('Successfull Login');
         this.authService.login();
         this.loginForm.reset()
         this.dialogRef.close();  //i close the login modal
          this.router.navigate(['/movies']);
       } else {
-        alert ("User not found. Please check your credentials.")
+        this.toastr.error("Wrong credentials. Check again!")
       }
     }, error => {
       console.error('Login error:', error);

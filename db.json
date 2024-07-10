@@ -27,6 +27,13 @@
       "email": "sara@gmail.com",
       "password": "sara",
       "number": "12345678"
+    },
+    {
+      "id": "28b7",
+      "name": "alma",
+      "email": "alma@gmail.com",
+      "password": "alma",
+      "number": "77757584"
     }
   ]
 }
