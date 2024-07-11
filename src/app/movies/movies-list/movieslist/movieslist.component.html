@@ -28,7 +28,7 @@
     <!-- <div class="row mt-4" id="upcoming"> 
       <h3>Upcoming Movies</h3>
       <div class="movies-list">
-        <div class="card" *ngFor="let movie of upcomingMovies" (click)="openMovieDetail($event,movie, 'Upcoming Movies')" >
+        <div class="card" *ngFor="let movie of upcomingMovies" (mouseover)="openMovieDetail($event, movie, 'upcoming')" (mouseleave)="close()" (click)="navigateToMovieDetails(movie)" >
           <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img" />
           <app-share [movieId]="movie.id"></app-share>
         </div>
@@ -37,7 +37,7 @@
     <div class="row mt-4" id="upcoming">
         <h3>Action Movies</h3>
         <div class="movies-list">
-          <div class="card" *ngFor="let movie of actionMovies" (click)="openMovieDetail($event,movie, 'Action Movies')" >
+          <div class="card" *ngFor="let movie of actionMovies" (mouseover)="openMovieDetail($event, movie, 'action')" (mouseleave)="close()" (click)="navigateToMovieDetails(movie)" >
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img"  />
             <app-share [movieId]="movie.id"></app-share>
           </div>
@@ -46,7 +46,7 @@
       <div class="row mt-4" id="upcoming">
         <h3>Adventure Movies</h3>
         <div class="movies-list">
-          <div class="card" *ngFor="let movie of adventureMovies" (click)="openMovieDetail($event, movie, 'Adventure Movies')">
+          <div class="card" *ngFor="let movie of adventureMovies" (mouseover)="openMovieDetail($event, movie, 'adventure')" (mouseleave)="close()" (click)="navigateToMovieDetails(movie)">
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="movie-img" />
             <app-share [movieId]="movie.id"></app-share>
           </div>

@@ -94,22 +94,18 @@ export class MovieslistComponent {
 
   // for details modal
 
-
    openMovieDetail(event: MouseEvent, movie:any, category:string): void {
 
     event.preventDefault()
     event.stopPropagation();
    
     const target= event.currentTarget as HTMLElement
-    
     const movieCardRect = target.getBoundingClientRect()
 
   console.log(movieCardRect.left)
   console.log(movieCardRect.top)
 
-    event.preventDefault();
-    event.stopPropagation();
-
+ 
     let topPosition:number
 
     if(category === 'top'){
@@ -144,8 +140,6 @@ export class MovieslistComponent {
     this.dialogRef.close()
   }
   
-
-
   navigateToMovieDetails(movie:any){
     this.router.navigate(['/movies', movie.id]);
     console.log("clicked", movie.id)

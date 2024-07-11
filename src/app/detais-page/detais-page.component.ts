@@ -20,6 +20,8 @@ export class DetaisPageComponent {
   reviews:any
   video!:any
 
+  castExpanded = true; // Initial state for cast section
+  reviewsExpanded = false; // Initial state for reviews section
   constructor(private route:ActivatedRoute, private service:MoviesServiceService, private router:Router){
   }
 
@@ -43,7 +45,7 @@ export class DetaisPageComponent {
   getReviews(id:any){
     this.service.getReviews(id).subscribe((res)=>{
       this.reviews=res.results
-      //console.log(res.results)
+      console.log(res.results)
     })
   }
 
@@ -74,6 +76,16 @@ export class DetaisPageComponent {
 
   toHome(){
     this.router.navigate(['/movies'])
+  }
+
+
+
+  toggleCast() {
+    this.castExpanded = !this.castExpanded;
+  }
+
+  toggleReviews() {
+    this.reviewsExpanded = !this.reviewsExpanded;
   }
 
 
